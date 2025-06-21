@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografik: Sistem AI Deteksi Dini Parkinson</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow::after {
+            content: '→';
+            font-size: 2rem;
+            line-height: 1;
+            color: #4192D9;
+            margin: 0 1rem;
+        }
+        .flow-arrow-down::after {
+            content: '↓';
+            font-size: 2rem;
+            line-height: 1;
+            color: #4192D9;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .kpi-card {
+            background-color: #005CB9;
+            color: white;
+        }
+        .header-gradient {
+            background: linear-gradient(90deg, #00449E, #0074D9);
+        }
+        .section-title {
+            color: #00449E;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="header-gradient text-white p-8 text-center rounded-b-3xl shadow-lg">
+        <h1 class="text-3xl md:text-5xl font-bold mb-2">Sistem AI untuk Deteksi Dini Parkinson</h1>
+        <p class="text-lg md:text-xl text-blue-100">Analisis Tremor & Bradikinesia Melalui Pola Spiral</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="challenge" class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center section-title">Tantangan Diagnosis Penyakit Parkinson</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8">Penyakit Parkinson (PD) adalah gangguan neurodegeneratif yang prevalensinya terus meningkat. Diagnosis konvensional yang bersifat subjektif seringkali terlambat dan tidak konsisten, terutama pada tahap awal. Hal ini menghambat intervensi dini yang krusial bagi manajemen penyakit.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
+                    <div class="kpi-card rounded-lg p-6 shadow-md">
+                        <p class="text-5xl font-extrabold">+112%</p>
+                        <p class="mt-2 font-semibold">Proyeksi Peningkatan Prevalensi PD Global pada 2050</p>
+                    </div>
+                    <div class="kpi-card rounded-lg p-6 shadow-md">
+                        <p class="text-5xl font-extrabold">+143%</p>
+                        <p class="mt-2 font-semibold">Peningkatan Prevalensi PD di Indonesia (1990-2019)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center section-title">Solusi Inovatif: Analisis Spiral dengan AI</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8">Kami mengusulkan sistem berbasis aplikasi mobile yang memanfaatkan AI untuk menganalisis gambar spiral digital. Tes ini sederhana, non-invasif, dan mampu menangkap anomali gerak tangan seperti tremor dan bradikinesia dengan objektivitas dan akurasi tinggi.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-center mb-4">Akurasi Diagnosis: AI vs. Penilai Manusia</h3>
+                        <p class="text-center mb-4 text-gray-600">Studi menunjukkan model AI secara signifikan mengungguli akurasi diagnosis oleh penilai manusia dalam membedakan sindrom tremor dari gambar spiral.</p>
+                        <div class="chart-container">
+                            <canvas id="accuracyChart"></canvas>
+                        </div>
+                    </div>
+                    <div>
+                         <h3 class="text-xl font-bold text-center mb-4">Pentingnya Explainable AI (XAI)</h3>
+                        <div class="border-l-4 border-[#0074D9] pl-4">
+                            <p class="mb-2">Model AI sering dianggap sebagai "kotak hitam". Untuk membangun kepercayaan klinis, sistem kami mengimplementasikan XAI.</p>
+                            <p class="mb-2"><strong class="text-[#005CB9]">Transparansi:</strong> Teknik seperti Grad-CAM memvisualisasikan bagian gambar spiral yang paling memengaruhi keputusan model.</p>
+                            <p><strong class="text-[#005CB9]">Kepercayaan Dokter:</strong> Dengan memahami "mengapa" AI membuat diagnosis tertentu, dokter dapat lebih percaya diri dalam menggunakan alat ini untuk mendukung keputusan klinis mereka.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="how-it-works" class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center section-title">Alur Kerja Sistem: Dari Gambar ke Diagnosis</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8">Sistem ini memiliki alur kerja yang terstruktur untuk mengubah data gambar mentah menjadi wawasan klinis yang dapat ditindaklanjuti.</p>
+                <div class="flex flex-col md:flex-row justify-center items-center text-center flex-wrap">
+                    <div class="flex flex-col items-center p-4">
+                        <div class="text-4xl mb-2">📱</div>
+                        <h3 class="font-bold">1. Input Pengguna</h3>
+                        <p class="text-sm">Pasien menggambar spiral pada tablet via aplikasi Flutter.</p>
+                    </div>
+                    <div class="hidden md:flex items-center flow-arrow"></div>
+                    <div class="flex md:hidden items-center flow-arrow-down"></div>
+                    <div class="flex flex-col items-center p-4">
+                        <div class="text-4xl mb-2">⚙️</div>
+                        <h3 class="font-bold">2. Ekstraksi Fitur</h3>
+                        <p class="text-sm">Data kinematik (kecepatan, tekanan) diekstraksi di backend (Flask).</p>
+                    </div>
+                    <div class="hidden md:flex items-center flow-arrow"></div>
+                    <div class="flex md:hidden items-center flow-arrow-down"></div>
+                    <div class="flex flex-col items-center p-4">
+                        <div class="text-4xl mb-2">🧠</div>
+                        <h3 class="font-bold">3. Analisis AI</h3>
+                        <p class="text-sm">Model CNN (TensorFlow) menganalisis fitur untuk deteksi anomali.</p>
+                    </div>
+                    <div class="hidden md:flex items-center flow-arrow"></div>
+                    <div class="flex md:hidden items-center flow-arrow-down"></div>
+                    <div class="flex flex-col items-center p-4">
+                        <div class="text-4xl mb-2">📊</div>
+                        <h3 class="font-bold">4. Hasil & Visualisasi</h3>
+                        <p class="text-sm">Hasil, skor, dan visualisasi XAI ditampilkan di aplikasi.</p>
+                    </div>
+                     <div class="hidden md:flex items-center flow-arrow"></div>
+                     <div class="flex md:hidden items-center flow-arrow-down"></div>
+                    <div class="flex flex-col items-center p-4">
+                        <div class="text-4xl mb-2">📋</div>
+                        <h3 class="font-bold">5. Manajemen Data</h3>
+                        <p class="text-sm">Data disimpan & dikelola secara aman via Firebase & G-Workspace.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="mb-12">
+             <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center section-title">Analisis Fitur Kinematik Kunci</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8">AI menganalisis berbagai fitur dinamik dari gerakan tangan yang tidak terlihat oleh mata telanjang. Perbedaan antara subjek sehat dan pasien Parkinson menjadi jelas secara kuantitatif.</p>
+                <div class="chart-container" style="height: 400px; max-height: 500px;">
+                    <canvas id="featureComparisonChart"></canvas>
+                </div>
+                <p class="text-center mt-4 text-sm text-gray-500">Grafik di atas menunjukkan perbedaan signifikan pada fitur kunci. Pasien Parkinson cenderung menunjukkan kecepatan dan tekanan yang lebih rendah, serta variabilitas yang lebih tinggi, yang merupakan indikator bradikinesia dan tremor.</p>
+            </div>
+        </section>
+
+        <section id="technology" class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                 <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center section-title">Perbandingan Kinerja Algoritma AI</h2>
+                 <p class="text-center max-w-3xl mx-auto mb-8">Pemilihan algoritma yang tepat adalah kunci. Model Convolutional Neural Network (CNN) menunjukkan keseimbangan terbaik antara akurasi tinggi dalam analisis gambar dan potensi untuk diinterpretasikan melalui teknik XAI.</p>
+                <div class="chart-container">
+                    <canvas id="modelComparisonChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="ecosystem" class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center section-title">Ekosistem Teknologi Terintegrasi</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8">Sistem ini dibangun di atas tumpukan teknologi modern yang skalabel dan aman, menghubungkan pasien, aplikasi, dan dokter secara mulus.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="p-4 border-2 border-dashed border-[#7ABAF2] rounded-lg">
+                        <h3 class="text-xl font-bold text-[#005CB9] mb-2">Frontend (Aplikasi)</h3>
+                        <p class="font-semibold">Flutter</p>
+                        <p class="text-sm">Aplikasi mobile cross-platform untuk input pengguna dan visualisasi hasil.</p>
+                    </div>
+                    <div class="p-4 border-2 border-dashed border-[#7ABAF2] rounded-lg">
+                        <h3 class="text-xl font-bold text-[#005CB9] mb-2">Backend & AI</h3>
+                        <p class="font-semibold">Flask, Firebase, TensorFlow</p>
+                        <p class="text-sm">Menangani logika bisnis, otentikasi, penyimpanan data, dan inferensi model AI secara efisien.</p>
+                    </div>
+                    <div class="p-4 border-2 border-dashed border-[#7ABAF2] rounded-lg">
+                        <h3 class="text-xl font-bold text-[#005CB9] mb-2">Integrasi Klinis</h3>
+                        <p class="font-semibold">Google Workspace & Cloud</p>
+                        <p class="text-sm">Manajemen data aman (Google Cloud Healthcare API) dan pelaporan (Sheets, Drive).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="benefits" class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center section-title">Manfaat dan Dampak Penelitian</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+                    <div class="text-center p-4">
+                        <div class="text-4xl mb-3">🎯</div>
+                        <h3 class="text-lg font-bold">Deteksi Dini Objektif</h3>
+                        <p class="text-sm">Menyediakan alat ukur kuantitatif untuk diagnosis yang lebih akurat dan tepat waktu.</p>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="text-4xl mb-3">📈</div>
+                        <h3 class="text-lg font-bold">Pemantauan Berkelanjutan</h3>
+                        <p class="text-sm">Memungkinkan pelacakan perkembangan gejala di luar klinik, mendukung penyesuaian terapi.</p>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="text-4xl mb-3">🧑‍⚕️</div>
+                        <h3 class="text-lg font-bold">Meningkatkan Kepercayaan Klinis</h3>
+                        <p class="text-sm">Fitur XAI memberikan transparansi, memfasilitasi adopsi teknologi oleh para profesional medis.</p>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="text-4xl mb-3">🔬</div>
+                        <h3 class="text-lg font-bold">Kontribusi Ilmiah</h3>
+                        <p class="text-sm">Memajukan penerapan AI dalam analisis penyakit neurodegeneratif.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-4 text-gray-500 text-sm">
+        <p>Infografik ini dibuat berdasarkan proposal penelitian skripsi untuk memberikan gambaran umum tentang proyek.</p>
+    </footer>
+
+    <script>
+        const brilliantBlues = ['#0074D9', '#4192D9', '#7ABAF2', '#005CB9', '#00449E'];
+
+        function wrapLabels(label, maxWidth) {
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#374151' 
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    ticks: { color: '#374151' },
+                    grid: { color: '#e5e7eb' }
+                },
+                x: {
+                    ticks: { color: '#374151' },
+                    grid: { color: '#e5e7eb' }
+                }
+            }
+        };
+
+        new Chart(document.getElementById('accuracyChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Akurasi AI', 'Akurasi Penilai Manusia'],
+                datasets: [{
+                    label: 'Akurasi Diagnosis',
+                    data: [81, 46],
+                    backgroundColor: [brilliantBlues[0], brilliantBlues[2]],
+                    borderColor: '#ffffff',
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                         labels: {
+                            color: '#374151',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                             title: (tooltipItems) => tooltipItems[0].label,
+                             label: (context) => ` Akurasi: ${context.raw}%`
+                        }
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('featureComparisonChart'), {
+            type: 'bar',
+            data: {
+                labels: [
+                    wrapLabels('Kecepatan Menggambar (mSp)', 16),
+                    wrapLabels('Tekanan Pena (Rata-rata)', 16),
+                    wrapLabels('Variabilitas Spiral (SWVI)', 16)
+                ],
+                datasets: [
+                    {
+                        label: 'Subjek Sehat',
+                        data: [85, 90, 20],
+                        backgroundColor: brilliantBlues[1],
+                        borderColor: brilliantBlues[0],
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Pasien Parkinson',
+                        data: [45, 55, 75],
+                        backgroundColor: brilliantBlues[3],
+                        borderColor: brilliantBlues[4],
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                ...commonChartOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Nilai Relatif (0-100)', color: '#374151' },
+                        ticks: { color: '#374151' },
+                        grid: { color: '#e5e7eb' }
+                    },
+                     x: {
+                        ticks: { color: '#374151' },
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('modelComparisonChart'), {
+            type: 'radar',
+            data: {
+                labels: ['Akurasi', 'Interpretasi (XAI)', 'Kebutuhan Data', 'Kecepatan Inferensi', 'Robustness'],
+                datasets: [{
+                    label: 'CNN',
+                    data: [95, 75, 85, 80, 90],
+                    fill: true,
+                    backgroundColor: 'rgba(0, 116, 217, 0.2)',
+                    borderColor: brilliantBlues[0],
+                    pointBackgroundColor: brilliantBlues[0],
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: brilliantBlues[0]
+                }, {
+                    label: 'SVM',
+                    data: [88, 50, 60, 95, 70],
+                    fill: true,
+                    backgroundColor: 'rgba(122, 186, 242, 0.2)',
+                    borderColor: brilliantBlues[2],
+                    pointBackgroundColor: brilliantBlues[2],
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: brilliantBlues[2]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                 plugins: {
+                    legend: {
+                        position: 'top',
+                         labels: {
+                            color: '#374151'
+                        }
+                    },
+                     tooltip: {
+                         callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                     }
+                },
+                scales: {
+                    r: {
+                        angleLines: { color: '#d1d5db' },
+                        grid: { color: '#e5e7eb' },
+                        pointLabels: { color: '#374151', font: { size: 12 } },
+                        ticks: {
+                            backdropColor: 'transparent',
+                            color: '#6b7280'
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
